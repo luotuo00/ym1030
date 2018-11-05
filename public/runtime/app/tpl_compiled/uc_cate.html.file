@@ -1,0 +1,327 @@
+<div id="uc_cate">
+	<a class="home <?php if ($this->_var['MODULE_NAME'] == 'uc_center' && $this->_var['ACTION_NAME'] != 'setweibo'): ?>home_cur<?php endif; ?>" href="<?php
+echo parse_url_tag("u:index|uc_center|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_CENTER']; ?>">
+		<i class="iconfont">&#xe602;</i>
+		我的<?php 
+$k = array (
+  'name' => 'app_conf',
+  'v' => 'SHOP_TITLE',
+);
+echo $k['name']($k['v']);
+?>
+	</a>
+	<div class="blank10"></div>
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe608;</i>资金管理
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_money' && ( $this->_var['ACTION_NAME'] == "incharge" || $this->_var['ACTION_NAME'] == "incharge_log" )): ?>act<?php endif; ?>" ><a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_money#incharge|"."".""); 
+?>" title="充值">充值</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_money' && ( $this->_var['ACTION_NAME'] == "carry" || $this->_var['ACTION_NAME'] == "carry_log" )): ?>act<?php endif; ?>" ><a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_money#bank|"."".""); 
+?>" title="提现">提现</a></li>
+            <li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_money' && $this->_var['ACTION_NAME'] == "bank"): ?>act<?php endif; ?>" ><a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_money#bank|"."".""); 
+?>" title="银行卡列表">银行卡列表</a></li> 
+			<li class="last <?php if ($this->_var['MODULE_NAME'] == 'uc_money' && $this->_var['ACTION_NAME'] == "index"): ?>act<?php endif; ?>" ><a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_money|"."".""); 
+?>" title="资金日志">资金日志</a></li>
+		</ul>
+	</div>
+	<?php if (( int ) app_conf ( "OPEN_IPS" ) > 0): ?>
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe629;</i>托管对账
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+        	<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_ips' && $this->_var['ACTION_NAME'] == "create"): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_ips#create|"."".""); 
+?>" title="标的登记">标的登记</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_ips' && $this->_var['ACTION_NAME'] == "recharge"): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_ips#recharge|"."".""); 
+?>" title="充值">充值日志</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_ips' && $this->_var['ACTION_NAME'] == "transfer"): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_ips#transfer|"."".""); 
+?>" title="提现">提现日志</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_ips' && $this->_var['ACTION_NAME'] == "creditor"): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_ips#creditor|"."".""); 
+?>" title="投标记录">投标记录</a></li>			
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_ips' && $this->_var['ACTION_NAME'] == "repayment" || $this->_var['ACTION_NAME'] == "repayment_view"): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_ips#repayment|"."".""); 
+?>" title="还款单">还款单</a></li>	
+            <li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_ips' && $this->_var['ACTION_NAME'] == "receivedpayment"): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_ips#receivedpayment|"."".""); 
+?>" title="回款单">回款单</a></li>	
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_ips' && $this->_var['ACTION_NAME'] == "fullscale" || $this->_var['ACTION_NAME'] == "fullscale_view"): ?>act<?php endif; ?>" > <a class="uc_cate"  href="<?php
+echo parse_url_tag("u:index|uc_ips#fullscale|"."".""); 
+?>" title="满标放款">满标放款</a></li>
+			<li class="last <?php if ($this->_var['MODULE_NAME'] == 'uc_ips' && $this->_var['ACTION_NAME'] == "ips_transfer" || $this->_var['ACTION_NAME'] == "ips_transfer_view"): ?>act<?php endif; ?>" > <a class="uc_cate"  href="<?php
+echo parse_url_tag("u:index|uc_ips#ips_transfer|"."".""); 
+?>" title="债权转让">债权转让</a></li>
+		</ul>
+	</div>
+	<?php endif; ?>
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe606;</i>投资管理
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_invest'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_invest|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_INVEST']; ?>"><?php echo $this->_var['LANG']['UC_INVEST']; ?></a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_repay_plan'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_repay_plan|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_REPAY_PLAN']; ?>"><?php echo $this->_var['LANG']['UC_REPAY_PLAN']; ?></a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_transfer'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_transfer|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_TRANSFER']; ?>"><?php echo $this->_var['LANG']['UC_TRANSFER']; ?></a></li>			
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_collect'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_collect|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_COLLECT']; ?>"><?php echo $this->_var['LANG']['UC_COLLECT']; ?></a></li>	
+			<li class="last <?php if ($this->_var['MODULE_NAME'] == 'uc_earnings'): ?>act<?php endif; ?>" > <a class="uc_cate"  href="<?php
+echo parse_url_tag("u:index|uc_earnings|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_EARNINGS']; ?>"><?php echo $this->_var['LANG']['UC_EARNINGS']; ?></a></li>
+			<?php if (app_conf ( "OPEN_AUTOBID" ) == 1): ?><li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_autobid'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_autobid|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_AUTO_BID']; ?>"><?php echo $this->_var['LANG']['UC_AUTO_BID']; ?></a></li><?php endif; ?>
+		</ul>
+	</div>
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe604;</i>借款管理
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_deal' && ( $this->_var['ACTION_NAME'] == 'refund' || $this->_var['ACTION_NAME'] == 'quick_refund' || $this->_var['ACTION_NAME'] == 'inrepay_refund' )): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_deal#refund|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_DEAL_REFUND']; ?>"><?php echo $this->_var['LANG']['UC_DEAL_REFUND']; ?></a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_deal' && $this->_var['ACTION_NAME'] == 'borrowed'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_deal#borrowed|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_DEAL_BORROWED']; ?>"><?php echo $this->_var['LANG']['UC_DEAL_BORROWED']; ?></a></li>
+			<li class="last <?php if ($this->_var['MODULE_NAME'] == 'uc_deal' && $this->_var['ACTION_NAME'] == 'borrow_stat'): ?>act<?php endif; ?>" > <a class="uc_cate"  href="<?php
+echo parse_url_tag("u:index|uc_deal#borrow_stat|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_DEAL_BORROW_STAT']; ?>"><?php echo $this->_var['LANG']['UC_DEAL_BORROW_STAT']; ?></a></li>
+		</ul>
+		
+	</div>
+	<?php if (( int ) app_conf ( "LICAI_OPEN" ) > 0): ?>
+    <div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe61b;</i>我的理财
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'licai' && ( $this->_var['ACTION_NAME'] == 'uc_published_lc' || $this->_var['ACTION_NAME'] == 'uc_record_lc' || $this->_var['ACTION_NAME'] == 'uc_u_buyed_deal_lc' )): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|licai#uc_published_lc|"."".""); 
+?>" title="发起的理财">发起的理财</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'licai' && $this->_var['ACTION_NAME'] == 'uc_expire_lc'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|licai#uc_expire_lc|"."".""); 
+?>" title="快到期理财发放">快到期理财发放</a></li>
+			<li class="last <?php if ($this->_var['MODULE_NAME'] == 'licai' && ( $this->_var['ACTION_NAME'] == 'uc_redeem_lc' )): ?>act<?php endif; ?>" > <a class="uc_cate"  href="<?php
+echo parse_url_tag("u:index|licai#uc_redeem_lc|"."".""); 
+?>" title="赎回管理">赎回管理</a></li>
+            <li class="last <?php if ($this->_var['MODULE_NAME'] == 'licai' && ( $this->_var['ACTION_NAME'] == 'uc_buyed_lc' || $this->_var['ACTION_NAME'] == 'uc_buyed_deal_lc' || $this->_var['ACTION_NAME'] == 'uc_redeem' || $this->_var['ACTION_NAME'] == 'uc_yeb_lc' )): ?>act<?php endif; ?>" > <a class="uc_cate"  href="<?php
+echo parse_url_tag("u:index|licai#uc_buyed_lc|"."".""); 
+?>" title="购买的理财">购买的理财</a></li>
+		</ul>
+		
+	</div>
+	<?php endif; ?>
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe614;</i>账户管理
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_account' && ( $this->_var['ACTION_NAME'] == 'index' || $this->_var['ACTION_NAME'] == 'work' )): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_account|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_ACCOUNT']; ?>"><?php echo $this->_var['LANG']['UC_ACCOUNT']; ?></a></li>
+			<?php if ($this->_var['user_info']['user_type'] == 1): ?>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_company'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_company|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_COMPANY']; ?>"><?php echo $this->_var['LANG']['UC_COMPANY']; ?></a></li>
+			<?php endif; ?>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_credit'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_credit|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_CREDIT']; ?>"><?php echo $this->_var['LANG']['UC_CREDIT']; ?></a></li>
+            <li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_consignee'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_consignee|"."".""); 
+?>" title="收货地址">收货地址</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_account' && $this->_var['ACTION_NAME'] == 'security'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_account#security|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_SECURITY']; ?>"><?php echo $this->_var['LANG']['UC_SECURITY']; ?></a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_center' && $this->_var['ACTION_NAME'] == 'setweibo'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_center#setweibo|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_SETWEIBO']; ?>"><?php echo $this->_var['LANG']['UC_SETWEIBO']; ?></a></li>
+			<?php if (app_conf ( "OPEN_QUOTA" ) == 1): ?>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_deal_quota' && $this->_var['ACTION_NAME'] == 'index'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_deal_quota#index|"."".""); 
+?>" title="授信额度申请">授信额度申请</a></li>
+         	<?php endif; ?>
+         	<?php if (app_conf ( "OPEN_POINT" ) == 1): ?>
+         	<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_quota' && $this->_var['ACTION_NAME'] == 'index'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_quota#index|"."".""); 
+?>" title="申请信用额度">申请信用额度</a></li>	
+ 		    <?php endif; ?>
+		</ul>
+	</div>
+	
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe63e;</i>我的红包
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_voucher' && $this->_var['ACTION_NAME'] == 'index'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_voucher|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_VOUCHER']; ?>"><?php echo $this->_var['LANG']['UC_VOUCHER']; ?></a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_voucher' && $this->_var['ACTION_NAME'] == 'exchange'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_voucher#exchange|"."".""); 
+?>"  title="<?php echo $this->_var['LANG']['UC_VOUCHER_EXCHARGE']; ?>"><?php echo $this->_var['LANG']['UC_VOUCHER_EXCHARGE']; ?></a></li>
+			
+		</ul>
+	</div>
+    
+    <div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe643;</i>我的加息券
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_interestrate' && $this->_var['ACTION_NAME'] == 'index'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_interestrate|"."".""); 
+?>" title="我的加息券">我的加息券</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_interestrate' && $this->_var['ACTION_NAME'] == 'exchange'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_interestrate#exchange|"."".""); 
+?>"  title="兑换加息券">兑换加息券</a></li>
+			
+		</ul>
+	</div>
+	
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe600;</i>VIP专享
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_vip_setting' && ( $this->_var['ACTION_NAME'] == 'index' || $this->_var['ACTION_NAME'] == 'work' )): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_vip_setting|"."".""); 
+?>" title="我的级别">我的级别</a></li>
+			<!--<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_vip_buy'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_vip_buy|"."".""); 
+?>" title="VIP购买">VIP购买</a></li>-->
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_given_record' && $this->_var['ACTION_NAME'] == 'index'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_given_record|"."".""); 
+?>"  title="节日福利">节日福利</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_gift_record' && $this->_var['ACTION_NAME'] == 'index'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_gift_record|"."".""); 
+?>"   title="投资奖励">投资奖励</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_score_exchange'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_score_exchange#record|"."".""); 
+?>"  title="我的积分">我的积分</a></li>
+			<li class="last <?php if ($this->_var['MODULE_NAME'] == 'uc_goods_order' && $this->_var['ACTION_NAME'] == 'index'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_goods_order|"."".""); 
+?>"  title="积分兑换列表">兑换商品</a></li>
+		</ul>
+	</div>
+	
+	<?php if (app_conf ( "INVITE_REFERRALS" ) == 1): ?>
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe62a;</i>推荐奖励
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_invite' && ACTION_NAME != 'reward'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_invite|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_INVITE']; ?>"><?php echo $this->_var['LANG']['UC_INVITE']; ?></a></li>
+			<li class="last <?php if ($this->_var['MODULE_NAME'] == 'uc_invite' && ACTION_NAME == 'reward'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_invite#reward|"."".""); 
+?>" title="奖励记录">奖励记录</a></li>
+		</ul>
+	</div>
+	<?php endif; ?>
+    
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe62b;</i>互动设置
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_msg' && $this->_var['ACTION_NAME'] != 'setting'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_msg|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_MSG']; ?>"><?php echo $this->_var['LANG']['UC_MSG']; ?></a></li>
+			<li class="last <?php if ($this->_var['MODULE_NAME'] == 'uc_msg' && $this->_var['ACTION_NAME'] == 'setting'): ?>act<?php endif; ?>" > <a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_msg#setting|"."".""); 
+?>" title="<?php echo $this->_var['LANG']['UC_MSG_SETTING']; ?>"><?php echo $this->_var['LANG']['UC_MSG_SETTING']; ?></a></li>	
+		</ul>
+	</div>
+	
+	<div class="hd">
+		<span class="t">
+			<i class="iconfont">&#xe63d;</i>理财体验金
+		</span>
+		<i class="iconfont r">&#xe62e;</i>
+		<i class="iconfont d">&#xe62c;</i>
+	</div>
+	<div class="c_body" style="display:none;">
+		<ul class="menu">
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_learn' && ( $this->_var['ACTION_NAME'] == "index" || $this->_var['ACTION_NAME'] == "index" )): ?>act<?php endif; ?>" ><a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_learn#index|"."".""); 
+?>" title="理财体验金">理财体验金</a></li>
+			<li class="<?php if ($this->_var['MODULE_NAME'] == 'uc_learn' && ( $this->_var['ACTION_NAME'] == "deal_invest" || $this->_var['ACTION_NAME'] == "deal_invest" )): ?>act<?php endif; ?>" ><a class="uc_cate" href="<?php
+echo parse_url_tag("u:index|uc_learn#deal_invest|"."".""); 
+?>" title="理财体验金">体验金投资</a></li>
+		</ul>
+	</div>
+     
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#uc_cate li.act").parent().parent().prev(".hd").addClass("hd_cur");
+	$("#uc_cate li.act").parent().parent().show();
+	/* 滑动/展开 */
+	$("#uc_cate .hd").click(function(){
+		$(this).next(".c_body").slideToggle();
+	});
+});
+</script>

@@ -1,0 +1,600 @@
+<div class="u_box bddf clearfix p15" style="background:#fefbf8;">
+    <div class='f_l u_img'>
+        <img src="<?php 
+$k = array (
+  'name' => 'get_user_avatar',
+  'uid' => $this->_var['user_data']['id'],
+  'type' => 'middle',
+);
+echo $k['name']($k['uid'],$k['type']);
+?>" width="78" height="78" alt="<?php echo $this->_var['user_data']['name']; ?>" title="<?php echo $this->_var['user_data']['name']; ?>">
+    	<?php if (app_conf ( "USER_LOGIN_MONEY" ) != '0' || app_conf ( "USER_LOGIN_SCORE" ) > 0 || app_conf ( "USER_LOGIN_POINT" ) > 0 || app_conf ( "USER_LOGIN_NMC_MONEY" ) > 0): ?>
+		<div class="user_sign lh20 tc">
+			<?php if ($this->_var['t_sign_data']): ?>
+				您在今天<?php 
+$k = array (
+  'name' => 'to_date',
+  'v' => $this->_var['t_sign_data']['sign_date'],
+  'f' => 'H:i:s',
+);
+echo $k['name']($k['v'],$k['f']);
+?>已经签到过了
+			<?php else: ?>
+				<?php if ($this->_var['y_sign_data']): ?>
+					您已经连续签到<?php echo $this->_var['sign_day']; ?>天<br />继续努力
+					<div class="blank"></div>
+					<a href="javascript:void(0);" onclick="user_sign();" title="<?php echo $this->_var['sign_tip']; ?>" class="sign_in_button" style="display:inline-block; line-height:28px; text-decoration:none; color:#fff;"></a>
+				<?php else: ?>
+					您昨天忘记签到了<br />重头来吧。
+					<div class="blank5"></div>
+					<a href="javascript:void(0);" onclick="user_sign();"  title="<?php echo $this->_var['sign_tip']; ?>" class="sign_in_button" style="display:inline-block; line-height:28px; text-decoration:none; color:#fff;"></a>
+				<?php endif; ?>
+			<?php endif; ?>
+		</div>
+		<?php endif; ?>
+	</div>
+    <div class="f_l desc">
+        <div class='f_l u_infobox'>
+            <div class="u_l1" >
+                <div class="f_l" >
+                	 昵称：
+                </div>
+                <div class="f_l f_blue">
+                    <?php echo $this->_var['user_data']['user_name']; ?>
+					<?php if ($this->_var['user_info']['vip_id'] > 0): ?>
+                    <img src="<?php echo $this->_var['TMPL']; ?>/images/vip/<?php echo $this->_var['user_info']['vip_id']; ?>.png" title="<?php 
+$k = array (
+  'name' => 'get_vip_name',
+  'id' => $this->_var['user_info']['vip_id'],
+);
+echo $k['name']($k['id']);
+?>">
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="u_l1 " >
+                <div class="f_l" >
+                	 我的红包：
+                </div>
+                <div class="f_l ">
+                    <a href="<?php
+echo parse_url_tag("u:index|uc_voucher|"."".""); 
+?>" class="f_red"><?php echo $this->_var['voucher_count']; ?></a> 个
+                </div>
+            </div>
+           
+			<div class="u_l1" >
+                <div class="f_l" >
+                	总积分：
+                </div>
+                <div class="f_l">
+                    <span class='f_red'><?php echo $this->_var['user_data']['score']; ?></span>
+                </div>
+            </div>
+            <?php if (intval ( app_conf ( "OPEN_IPS" ) ) > 0): ?>
+            <div class="u_l1" >
+                <div class="f_l" >
+                	第三方管理账号：
+                </div>
+                <div class="f_l">
+                    <?php if ($this->_var['user_data']['ips_acct_no'] != ''): ?>
+                    
+                        <?php if ($this->_var['is_yeepay'] > 0): ?>
+                            <?php if ($this->_var['user_data']['ips_status'] == "ACTIVATED" || $this->_var['user_data']['user_type'] == 0): ?>
+                                <span>已绑定</span>
+                            <?php else: ?>
+                                <span>未激活</span>
+                            <?php endif; ?>
+                        <?php else: ?>
+                        	<span>已绑定</span>
+                        <?php endif; ?>
+                        
+                    <?php else: ?>
+                    	<a href="javascript:void(0);" id="J_bind_ips" class="f_blue">去绑定</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php endif; ?>
+			<div class="u_l1 " >
+                <div class="f_l" >
+                	 最后登录：
+                </div>
+                <div class="f_l ">
+                    <?php 
+$k = array (
+  'name' => 'to_date',
+  'v' => $this->_var['user_data']['locate_time'],
+);
+echo $k['name']($k['v']);
+?>
+                </div>
+            </div>
+           
+            <div class="blank1"></div>
+            <div class='pt10 credit-bx'>
+            	<a class='credit pr' style="top:-1px" href='<?php
+echo parse_url_tag("u:index|uc_account#security|"."".""); 
+?>' title="实名认证，<?php if ($this->_var['user_data']['idcardpassed'] == 1): ?>已认证<?php else: ?>未认证<?php endif; ?>">
+                	<i class="iconfont <?php if ($this->_var['user_data']['idcardpassed'] == 1): ?>f_blue<?php endif; ?>">&#xe633;</i>
+                </a>
+               
+                <a class='credit' href='<?php
+echo parse_url_tag("u:index|uc_account#security|"."".""); 
+?>' title="手机认证，<?php if ($this->_var['user_data']['mobilepassed'] == 1): ?>已认证<?php else: ?>未认证<?php endif; ?>">
+                	<i class="iconfont <?php if ($this->_var['user_data']['mobilepassed'] == 1): ?>f_blue<?php endif; ?>">&#xe632;</i>
+                </a>
+                 <a class='credit' href='<?php
+echo parse_url_tag("u:index|uc_account#security|"."".""); 
+?>' title="邮箱认证，<?php if ($this->_var['user_data']['emailpassed'] == 1): ?>已认证<?php else: ?>未认证<?php endif; ?>">
+                	<i class="iconfont <?php if ($this->_var['user_data']['emailpassed'] == 1): ?>f_blue<?php endif; ?>">&#xe636;</i>
+                </a>
+                <a class='credit pr' href='<?php
+echo parse_url_tag("u:index|uc_account#security|"."".""); 
+?>' title="支付密码，<?php if ($this->_var['user_data']['paypassword'] != ''): ?>已设置<?php else: ?>未设置<?php endif; ?>">
+                	<i class="iconfont ps small <?php if ($this->_var['user_data']['paypassword'] != ''): ?>f_blue<?php endif; ?>">&#xe604;</i>
+					<i class="iconfont <?php if ($this->_var['user_data']['paypassword'] != ''): ?>f_blue<?php endif; ?>">&#xe634;</i>
+                </a>
+                <a class='credit ' href="<?php
+echo parse_url_tag("u:index|uc_account|"."".""); 
+?>" title="账户设置">
+                	<i class="iconfont f_blue">&#xe60c;</i>
+                </a>
+            </div>
+        </div>
+        <div class="recharge f_r">
+        	<div class="clearfix">
+            	<div class="f_l" >
+                	可用余额：
+                </div>
+                <div class="f_l">
+                    <span class=' J_u_money_0 f_yellow f20'><?php 
+$k = array (
+  'name' => 'number_format',
+  'v' => $this->_var['user_data']['money'],
+  'f' => '2',
+);
+echo $k['name']($k['v'],$k['f']);
+?></span>&nbsp;元
+                </div>
+				<div class="tc f_r">
+	                <a href="<?php
+echo parse_url_tag("u:index|uc_money#incharge|"."".""); 
+?>" class="btn_blue blue f_white lh30 bdr3 w90">充值</a>
+	                <a href="<?php
+echo parse_url_tag("u:index|uc_money#bank|"."".""); 
+?>" class=" btn_green f_white lh30 bdr3 w90">提现</a>
+				</div>
+            </div>
+			<div class="blank10"></div>
+            
+			<div class="clearfix" style="padding-left:70px">其中不可提现金额：<span class="f_red"><?php 
+$k = array (
+  'name' => 'number_format',
+  'v' => $this->_var['user_data']['nmc_amount'],
+  'f' => '2',
+);
+echo $k['name']($k['v'],$k['f']);
+?></span>元（奖励金额，可用于投资，不可提现）</div>
+			<div class="blank10"></div>
+			 <div class="f_l u_frozen_box f_white p10">
+	                <span class="f12">冻结资金(元)</span>
+					<div class="blank0"></div>
+	                <span class='J_u_money_2 f16'><?php echo $this->_var['user_data']['lock_money']; ?></span>
+            </div>
+            <div class="f_l u_total_box f_white p10">
+	                <span class="f12">账户余额(元)</span>
+					<div class="blank0"></div>
+	                <span class='J_u_money_1 f16'><?php echo $this->_var['user_data']['total_money']; ?></span>
+            </div>
+           
+            
+        </div>
+    </div>  
+</div>
+<div class="blank15"></div>
+<div class="uc_box bdd uc_user_info">
+	<div class="uc_box us_info_box">        
+        <div class="us_title p60">
+			账户详情<a class='f_r f14 pr20' href="<?php
+echo parse_url_tag("u:index|uc_deal#borrow_stat|"."".""); 
+?>">查看详情</a>
+		</div>        
+		<div class="clearfix us_box p10">
+        	<ul>
+                <li>贷款总额：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['borrow_amount'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>借款笔数：<span><?php echo $this->_var['user_statics']['success_deal_count']; ?>笔</span></li>
+                <li>已还本息：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['repay_amount'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>待还本息：
+                <span>
+                    <?php 
+$k = array (
+  'name' => 'app_conf',
+  'value' => 'CURRENCY_UNIT',
+);
+echo $k['name']($k['value']);
+?><?php echo $this->_var['user_statics']['need_repay_money']; ?>
+                </span>
+                </li>
+                <li>已付管理费：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['repay_manage_amount'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>待付管理费：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['need_manage_amount'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>逾期本息：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['yuqi_amount'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>逾期费用：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['yuqi_impose'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="uc_box us_info_box">        
+        <div class="us_title p60">
+			投资统计<a class='f_r f14 pr20' href="<?php
+echo parse_url_tag("u:index|uc_earnings|"."".""); 
+?>">查看详情</a>
+		</div>        
+		<div class="clearfix us_box p10">
+        	<ul>
+                <li>投资总额：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['load_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>投资笔数：<span><?php echo $this->_var['user_statics']['load_count']; ?>笔</span></li>
+                <li>充值总额：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['incharge_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>提现总额：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['carry_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>已挣利息：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['load_earnings'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>已挣奖励：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['referrals_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>待收利息：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['load_wait_earnings'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>待收本金：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['load_wait_self_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>待付管理费：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['load_wait_manage'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>已付管理费：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['load_manage_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+            </ul>
+        </div>
+    </div>
+    <?php if (intval ( app_conf ( "OPEN_IPS" ) ) > 0): ?>
+    <div class="uc_box us_info_box">        
+        <div class="us_title p60">
+			托管账号详情
+		</div>        
+		<div class="clearfix us_box p10">
+        	<ul>
+                <li>资金总额：<span id='s_total_money'>￥0.00</span></li>
+                <li>可用资金：<span id='s_moeny'>￥0.00</span></li>
+                <li>待收总额：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['ips_need_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>冻结资金：<span id='s_lock_money'>￥0.00</span></li>
+                <li>回款资金：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['ips_load_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>充值资金：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['ips_incharge_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>奖励资金：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['ips_referrals_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+                <li>待还总额：<span><?php 
+$k = array (
+  'name' => 'format_price',
+  'value' => $this->_var['user_statics']['ips_repay_money'],
+);
+echo $k['name']($k['value']);
+?></span></li>
+            </ul>
+        </div>
+    </div>
+	<?php endif; ?>
+        <div class='blank'></div>
+		<div class="tabbox">
+			<div class="tab cur"><a>近期待还款</a></div>
+		</div>
+
+		<div class='blank'></div>
+		
+		<?php if ($this->_var['day_deal_repay']): ?>
+		<div class="clearfix">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="uc-table">
+				<tbody>
+					
+					<tr border="0">
+						<th>贷款名称</th>
+						<th style="width:10%">第几期</th>
+						<th style="width:15%">还款金额</th>
+						<th style="width:12%">待还本金</th>
+						<th style="width:12%">待还利息</th>
+						<th style="width:10%">还款日</th>
+						<th style="width:10%">还款状态</th>
+					</tr>
+					<?php $_from = $this->_var['day_deal_repay']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['item']):
+?>
+				
+					<tr class="item <?php if ($this->_var['key'] % 2 == 1): ?>item_1<?php endif; ?>" <?php if (($this->_foreach['deal']['iteration'] == $this->_foreach['deal']['total'])): ?>style="border-bottom:0"<?php endif; ?>>
+						<td class="tl">
+							<div class=" pl10">
+							<a href="<?php
+echo parse_url_tag("u:index|deal|"."id=".$this->_var['item']['deal_id']."".""); 
+?>" class="f_blue" target="_blank"><?php echo $this->_var['item']['name']; ?></a>
+		           	    	</div>
+						</td>
+						<td>
+							<?php echo $this->_var['item']['l_key_index']; ?>
+						</td>
+							<td><?php echo $this->_var['item']['repay_money_format']; ?></td>
+							<td><?php echo $this->_var['item']['self_money_format']; ?></td>
+							<td><?php echo $this->_var['item']['interest_money_format']; ?></td>
+						<td>
+							<?php 
+$k = array (
+  'name' => 'to_date',
+  'v' => $this->_var['item']['repay_time'],
+  'f' => 'Y-m-d',
+);
+echo $k['name']($k['v'],$k['f']);
+?>     
+						</td>
+						<td>
+							<?php echo $this->_var['item']['status_format']; ?> 
+						</td>
+					</tr>
+					<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+				</tbody>
+			</table>
+		</div>
+		<?php else: ?>	
+		<div align="center" style="padding:20px 0">暂无记录</div>
+		<?php endif; ?>
+		
+		
+		<div class='blank'></div>
+        
+        <div class="tabbox">
+			<div class="tab cur"><a>近期待收款</a></div>
+		</div>    
+		
+		<div class='blank'></div>
+		<?php if ($this->_var['day_repay_list']): ?>
+		<div class="clearfix">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="uc-table">
+				<tbody>
+					
+					<tr border="0" >
+						<th>贷款名称</th>
+						<th style="width:10%">第几期</th>
+						<th style="width:15%">待收款</th>
+						<th style="width:12%">预期收益</th>
+						<th style="width:12%">实际收益</th>
+						<th style="width:10%">还款日</th>
+						<th style="width:10%">还款状态</th>
+					</tr>
+				
+					
+					<?php $_from = $this->_var['day_repay_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['item']):
+?>
+				
+					<tr class="item <?php if ($this->_var['key'] % 2 == 1): ?>item_1<?php endif; ?>" <?php if (($this->_foreach['deal']['iteration'] == $this->_foreach['deal']['total'])): ?>style="border-bottom:0"<?php endif; ?>>
+						<td class="tl">
+							<div class=" pl10">
+							<a href="<?php
+echo parse_url_tag("u:index|deal|"."id=".$this->_var['item']['deal_id']."".""); 
+?>" class="f_blue" target="_blank"><?php echo $this->_var['item']['name']; ?></a>
+		           	    	</div>
+						</td>
+						<td>
+							<?php echo $this->_var['item']['l_key_index']; ?>
+						</td>
+							<td><?php echo $this->_var['item']['repay_money_format']; ?></td>
+							<td><?php echo $this->_var['item']['interest_money_format']; ?></td>
+							<td><?php if ($this->_var['item']['has_repay'] == 1): ?><?php echo $this->_var['item']['shiji_money']; ?> <?php else: ?> 0 <?php endif; ?></td>
+						<td>
+							<?php 
+$k = array (
+  'name' => 'to_date',
+  'v' => $this->_var['item']['repay_time'],
+  'f' => 'Y-m-d',
+);
+echo $k['name']($k['v'],$k['f']);
+?>     
+						</td>
+						<td>
+							<?php echo $this->_var['item']['status_format']; ?> 
+						</td>
+					</tr>
+					
+					<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+				</tbody>
+			</table>
+		</div>
+		<?php else: ?>	
+		<div align="center" style="padding:20px 0">暂无记录</div>
+		<?php endif; ?>
+		
+		
+		
+		
+		 <div class='blank'></div>
+        
+        <div class="tabbox">
+			<div class="tab cur"><a>推荐的标</a></div>
+		</div>        
+		<div class='blank'></div>
+		<?php if ($this->_var['deals_list']): ?>
+		<div class="clearfix">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="uc-table">
+				<tbody>
+					<tr border="0">
+						<th style="width:24%">贷款名称</th>
+						<th style="width:12%">借款人</th>
+						<th style="width:14%">借款总额</th>
+						<th style="width:10%">年利率</th>
+						<th style="width:10%">借款期限</th>
+						<th style="width:12%">开始日期</th>
+						<th style="width:10%">状态</th>
+					</tr>
+					<?php $_from = $this->_var['deals_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['item']):
+?>
+					<tr class="item <?php if ($this->_var['key'] % 2 == 1): ?>item_1<?php endif; ?>" <?php if (($this->_foreach['deal']['iteration'] == $this->_foreach['deal']['total'])): ?>style="border-bottom:0"<?php endif; ?>>
+						<td class="tl"><a href="<?php
+echo parse_url_tag("u:index|deal|"."id=".$this->_var['item']['id']."".""); 
+?>" class="f_blue" target="_blank"><?php echo $this->_var['item']['name']; ?> </a></td>
+						<td><?php echo $this->_var['item']['user']['user_name']; ?> </td>
+						<td><?php echo $this->_var['item']['borrow_amount_format']; ?> </td>
+						<td><?php echo $this->_var['item']['rate']; ?>%</td>
+						<td><?php echo $this->_var['item']['repay_time_format']; ?> </td>
+						<td><?php echo $this->_var['item']['start_time_format']; ?> </td>
+						<td><?php echo $this->_var['item']['deal_status_format']; ?> </td>
+					</tr>
+					<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+				</tbody>
+			</table>
+		</div>
+		<?php else: ?>	
+		<div align="center" style="padding:20px 0">暂无记录</div>
+		<?php endif; ?>
+		
+		
+</div>
+<style type="text/css">
+	.joke{font-size: 16px;}
+</style>
+<script type="text/javascript">
+	jQuery(function(){
+		<?php if ($this->_var['user_data']['ips_acct_no'] != '' && intval ( app_conf ( "OPEN_IPS" ) ) > 0): ?>
+		checkIpsBalance(0,<?php echo $this->_var['user_data']['id']; ?>,function(result){
+			if(result.pErrCode=="0000"){
+				$(".J_u_money_0").html($(".J_u_money_0").html() + "<br><span class='joke'>+" + formatNum(result.pBalance) +"[绑]</span>");
+				$(".J_u_money_1").html($(".J_u_money_1").html() + "<br><span>+</span>" + formatNum(result.pBalance + result.pLock + result.pNeedstl) +"<span>[绑]</span>");
+				$(".J_u_money_2").html($(".J_u_money_2").html() + "<br><span>+</span>" + formatNum(result.pLock) +"<span>[绑]</span>");
+				
+				$("#s_total_money").html(formatNum(result.pBalance + result.pLock + result.pNeedstl));
+				$("#s_moeny").html(formatNum(result.pBalance));
+				$("#s_lock_money").html(formatNum(result.pLock));
+			}
+		});
+		<?php endif; ?>
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			

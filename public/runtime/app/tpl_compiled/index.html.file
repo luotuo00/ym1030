@@ -1,0 +1,279 @@
+<?php echo $this->fetch('inc/header.html'); ?>
+<div class="container touzi-list">
+			<h2 class="list-title">推荐投资理财产品</h2>
+            <div class="list-box">
+                <div class="list-box-wrapper">
+                    <div class="list-box-inner list-inner">
+                        <ul>
+						<?php $_from = $this->_var['deal_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'deal');$this->_foreach['deal'] = array('total' => count($_from), 'iteration' => 0);
+if ($this->_foreach['deal']['total'] > 0):
+    foreach ($_from AS $this->_var['key'] => $this->_var['deal']):
+        $this->_foreach['deal']['iteration']++;
+?>
+                            <li class="touzi-item che">
+                                <div class="item-title">
+                                    <?php echo $this->_var['deal']['cate_info']['name']; ?>
+                                </div>
+                                <div class="time-profit">
+                                    <div class="time" style="text-align:right;">
+                                        <div>项目周期</div>
+                                        <span class="text-primary"><?php echo $this->_var['deal']['repay_time']; ?></span>
+                                        <?php if ($this->_var['deal']['repay_time_type'] == 0): ?>天<?php else: ?>个月<?php endif; ?>
+                                    </div>
+                                    <div class="profit">
+                                        <div>年化收益</div>
+                                        <div><span class="text-primary"><?php 
+$k = array (
+  'name' => 'sprintf',
+  's' => '%.1f',
+  'v' => $this->_var['deal']['rate'],
+);
+echo $k['name']($k['s'],$k['v']);
+?></span>%</div>
+                                    </div>
+                                </div>
+                                <span class="item-logo"></span>
+                                <span class="round-star star-5"></span>
+                                <a style="color:black;font-weight:bolder" href="/Project/Detail?id=60&amp;SP=1"><h3>  <?php echo $this->_var['deal']['sub_name']; ?></h3></a>
+                                <div class="item-info">
+                                    <ul>
+                                        <li style="font-size:12px;"><?php 
+$k = array (
+  'name' => 'loantypename',
+  'v' => $this->_var['deal']['loantype'],
+  'type' => '0',
+);
+echo $k['name']($k['v'],$k['type']);
+?></li>
+                                        <li style="font-size:12px;"><?php echo $this->_var['deal']['cate_info']['name']; ?></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                                <p style="font-size:15px;text-align:center">
+                                    <?php echo $this->_var['deal']['need_money']; ?>/<?php echo $this->_var['deal']['borrow_amount_format']; ?>
+                                </p>
+                                <div class="time-left">
+                                    <p class="" style="color: #f26600"> <?php if ($this->_var['deal']['deal_status'] == 1): ?>投资中<?php elseif ($this->_var['deal']['deal_status'] == 2): ?>满标<?php elseif ($this->_var['deal']['deal_status'] == 3): ?>流标<?php elseif ($this->_var['deal']['deal_status'] == 4): ?>还款中<?php endif; ?></p>
+                                </div>
+                                <div class="process-bar over">
+                                    <div class="process-bar-content" style="width:<?php 
+$k = array (
+  'name' => 'round',
+  'v' => $this->_var['deal']['progress_point'],
+  'f' => '3',
+);
+echo $k['name']($k['v'],$k['f']);
+?>%;background-color: #f26600;margin:0;">
+                                    <p class="text-primary" style="top: -12px; position: absolute; font-weight: bolder;"></p>
+                                    <div class="progress-bar"></div>
+                                </div>
+                                        </div>
+                                <div class="process-content">
+                                    <span class="float-left">
+                                        投资人数
+                                        <span class="text-primary">
+                                            <b><?php echo $this->_var['deal']['buy_count']; ?></b>
+                                        </span>
+                                    </span>
+                                </div>
+                                <!-- 添加is-backing 样式后 按钮变成 灰色 -->
+                                <?php if ($this->_var['deal']['is_delete'] == 2): ?>
+						        <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  is-backing">待发布</a>
+					            <?php elseif ($this->_var['deal']['is_wait'] == 1): ?>
+                                <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  is-backing">未开始</a>
+                                <?php elseif ($this->_var['deal']['deal_status'] == 5): ?>
+                                <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  is-backing">还款完毕</a>
+                                <?php elseif ($this->_var['deal']['deal_status'] == 4): ?>
+                                <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  is-backing">还款中</a>
+                                <?php elseif ($this->_var['deal']['deal_status'] == 0): ?>
+                                <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  is-backing">等待审核</a>
+                                <?php elseif ($this->_var['deal']['deal_status'] == 1 && $this->_var['deal']['remain_time'] > 0): ?>
+                                <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  ">马上投标</a>
+                                <?php elseif ($this->_var['deal']['deal_status'] == 2): ?>
+                                <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  is-backing">已满标</a>
+                                <?php elseif ($this->_var['deal']['deal_status'] == 3): ?>
+                                <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  is-backing">已流标</a>
+                                <?php elseif ($this->_var['deal']['deal_status'] == 1 && $this->_var['deal']['remain_time'] <= 0): ?>
+                                <a href="<?php echo $this->_var['deal']['url']; ?>" class="btn btn-primary btn-lg  is-backing">已过期</a>
+                                <?php endif; ?>
+                            </li>
+                            <!-- 在li上添加的class控制投标内容样式
+                               样式共分为：
+                                      che：融车宝
+                                      fang：融房宝
+                                      danbao 融担保
+                            -->
+                        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-controls">
+                <span class="main-prev"></span>
+                <span class="main-next"></span>
+            </div>
+			<a class="more-pro" href="/index.php?ctl=deals"> 更多产品<i class="fa fa-caret-right"></i></a>
+        </div>
+<script type="text/javascript">
+$(function() {
+	var $sidebar = $(".index_right"),
+		$window = $(window),
+		leftset=$(".index_left").innerHeight(),
+		offset = $sidebar.offset(),
+		topPadding = 15;
+		$window.scroll(function() {
+			var	top= $window.scrollTop() - offset.top + topPadding;
+			if ($window.scrollTop() > offset.top && leftset>$window.scrollTop()) {
+				if(top + $sidebar.outerHeight() <= $(".index_left").outerHeight())
+					$sidebar.stop().css("marginTop", top);
+			} else if (top<61) {
+				$sidebar.stop().css("marginTop", 0);
+			}
+		});
+
+	$('.list-inner').css('width', $('.list-inner .touzi-item').length * 293 + 20);
+	$('.main-prev').on('click', function (e) {
+		if (parseInt($('.list-inner').css('left')) > 0 || parseInt($('.list-inner').css('left')) == 0)
+			return;
+		else
+			$('.list-inner').animate({'left': '+=1172px'});
+	})
+	$('.main-next').on('click', function (e) {
+		if (parseInt($('.list-inner').css('left')) - 1080 < parseInt($('.list-inner').css('width')) * -1)
+			return;
+		else
+			$('.list-inner').animate({'left': '-=1172px'});
+    });
+});
+</script>
+<!--新闻 start-->
+<div class="js-nfdnews">
+    <div class="nfdnews">
+        <div class="w1200">
+            <div class="nfdnews_a1">
+                <div class="nfdnews_b12">媒体报道</div>
+                <a class="mt_more" target="_blank" href="<?php
+echo parse_url_tag("u:index|acate|"."id=".$this->_var['mtbd_id']."".""); 
+?>">更多&gt;</a>
+                <div class="nfdnews_b12" style="margin-left: 40px;">公司动态</div>
+                <a class="mt_more" target="_blank" href="/index.php?ctl=acate&id=5">更多&gt;</a></div>
+            <div class="nfdnews_a2 nfdnews_left">
+                <div class="nfdnews_a2_wrap">
+                    <div id="newsSlider" class="nfdnews_topnews example" style="width:266px;">
+                        <ul style="width: 1064px;">
+							<?php $_from = $this->_var['mtbd_pics']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'pic');if (count($_from)):
+    foreach ($_from AS $this->_var['pic']):
+?>
+                            <li>
+                                <a class="alt" href="/index.php?ctl=article&id=<?php echo $this->_var['pic']['id']; ?>" target="_blank" title="<?php echo $this->_var['pic']['title']; ?>" >
+                                    <div class="nfdnews_topnews_left">
+                                        <img src="<?php echo $this->_var['pic']['icon']; ?>" width="100%" height="100%" /></div>
+                                </a>
+                            </li>
+							<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                        </ul>
+                        <ol class="nfdnews_a3_circle">
+						<?php $_from = $this->_var['mtbd_pics']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'pic');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['pic']):
+?>
+                            <li <?php if ($this->_var['key'] == 0): ?>class="circle"<?php endif; ?>></li>
+                            <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                        </ol>
+                    </div>
+					<?php $_from = $this->_var['mtbd_pics']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'pic');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['pic']):
+?>
+                    <div class="J_NewsSliderText nfdnews_topnews_right <?php if ($this->_var['key'] == 0): ?>active<?php endif; ?>">
+                        <a href="/index.php?ctl=article&id=<?php echo $this->_var['pic']['id']; ?>" target="_blank" title="<?php echo $this->_var['pic']['title']; ?>" class="nfdnews_topnews_1">
+                            <b><?php echo $this->_var['pic']['sub_title']; ?> |</b><?php echo $this->_var['pic']['title']; ?></a>
+                        <div class="nfdnews_topnews_2 "><?php echo $this->_var['pic']['brief']; ?></div>
+					</div>
+					<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                    <div class="nfdnews_b22" style="padding-top:0px">
+                        <ul>
+							<?php $_from = $this->_var['mtbd_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'mtbd');if (count($_from)):
+    foreach ($_from AS $this->_var['mtbd']):
+?>
+                            <li>
+                                <a href="<?php echo $this->_var['mtbd']['url']; ?>" target="_blank" title="<?php echo $this->_var['mtbd']['title']; ?>">
+                                    <b><?php echo $this->_var['mtbd']['sub_title']; ?> |</b><?php echo $this->_var['mtbd']['title']; ?></a>
+                            </li>
+                            <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nfdnews_a3 nfdnews_right">
+                <div class="nfdnews_topnews">
+                    <ul>
+                        <li>
+                            <div class="alt">
+                                <a style="float:left" href="/index.php?ctl=article&id=<?php echo $this->_var['news_pics']['id']; ?>" target="_blank" title="<?php echo $this->_var['news_pics']['title']; ?>">
+                                    <div class="nfdnews_topnews_left">
+                                        <img src="<?php echo $this->_var['news_pics']['icon']; ?>" width="100%" height="100%" /></div>
+                                </a>
+                                <div class="nfdnews_topnews_right">
+                                    <a href="/index.php?ctl=article&id=<?php echo $this->_var['news_pics']['id']; ?>" target="_blank" title="<?php echo $this->_var['news_pics']['title']; ?>" class="nfdnews_topnews_1"><?php echo $this->_var['news_pics']['title']; ?></a>
+                                    <div class="nfdnews_topnews_2 ">
+                                        <p><?php echo $this->_var['news_pics']['brief']; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nfdnews_a3_bottom">
+                    <div class="nfdnews_a3_bottom_left">
+                        <ul class="nfdnews_a3_1">
+                        <?php $_from = $this->_var['compnay_active_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'news');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['news']):
+?>
+                            <li>
+                                <a target="_blank" href="<?php echo $this->_var['news']['url']; ?>" title="<?php echo $this->_var['news']['title']; ?>"><?php echo $this->_var['news']['title']; ?></a>
+                            <span><?php 
+$k = array (
+  'name' => 'to_date',
+  'v' => $this->_var['news']['create_time'],
+  's' => 'Y-m-d',
+);
+echo $k['name']($k['v'],$k['s']);
+?></span></li>
+                        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+	var $newsSlider = $("#newsSlider"),
+		$newsImgs = $newsSlider.children('ul'),
+		$newsIndex = $newsSlider.children('ol'),
+		$newsText = $(".J_NewsSliderText"),
+		newsLen = $newsImgs.children('li').length,
+		newsIndex = 0;
+	$newsImgs.width(266*newsLen+20);
+	function goto(index){
+		$newsImgs.animate({"left":-266*index+"px"},300);
+		$newsText.eq(index).addClass('active').siblings('.J_NewsSliderText').removeClass('active');
+		$newsIndex.find('li').eq(index).addClass('circle').siblings('li').removeClass('circle');
+	}
+	var newsTimer = null;
+	$newsSlider.hover(function(){
+		clearInterval(newsTimer);
+	},function(){
+		newsTimer = setInterval(function(){
+			newsIndex++;
+			newsIndex = newsIndex >= newsLen ? 0 : newsIndex;
+			goto(newsIndex);
+		},5000);
+	});
+	$newsIndex.find('li').click(function(){
+		newsIndex = $(this).index();
+		goto(newsIndex);
+	});
+});
+</script>
+<?php echo $this->fetch('inc/footer.html'); ?>

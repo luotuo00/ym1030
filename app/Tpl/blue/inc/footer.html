@@ -1,0 +1,81 @@
+</div>
+<!-- footer start -->
+    <div class="footer clearfix">
+	    <div class="footer-wrapper">
+	        <div class="footer_content clearfix">
+	            <div class="footer-info clearfix">
+
+				{foreach from=$deal_help item=help_cate name="help_cate"}
+						{if $smarty.foreach.help_cate.iteration <= 3}
+
+						 <dl>
+	                    	<dt><img src="{$TMPL}/images/footer_user.png"><a href="javascript:void(0)">{$help_cate.title}</a></dt>
+						{foreach from=$help_cate.help_list item=help_item name="help_item"}
+								{if $smarty.foreach.help_item.iteration <= app_conf('HELP_ITEM_LIMIT')}
+	                    <dd><a href="{$help_item.url}">{$help_item.title}</a></dd>
+						{/if}
+								{/foreach}  
+	                   
+	                </dl>
+
+
+						
+						{/if}
+						{/foreach}
+
+
+	                
+	            </div>
+	            <div class="footer-concern clearfix">
+	                <div class="footer-concern-content clearfix">
+	                    <div class="footer-concern-wechat">
+	                        <div class="footer-concern-wechat--icon"></div>
+	                        <p>融其道app下载</p>
+	                    </div>
+	                    <div class="footer-concern-app">
+	                        <div class="footer-concern-app--icon"></div>
+	                        <p>融其道微信</p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="footer-phone clearfix">
+	                <p class="footer-phone-title"><i class="footer-phone--icon"></i><span>客户服务热线</span></p>
+	                <div class="footer-phone-info  clearfix">
+	                    <p class="footer-phone-number">{function name="app_conf" v="SHOP_TEL"}</p>
+	                    <div class="footer-phone-time">
+	                        <p>工作日：9:00~20:00</p>
+	                        <p>周末及节假日：9:30~17:00</p>
+	                    </div>
+	                    <div class="footer-phone-customer">
+	                        <!-- http://wpa.b.qq.com/cgi/wpa.php?ln=2&amp;uin=4008225538 -->
+	                        <a class="footer-phone-customer-btn footer-phone-customer--service" href="http://wpa.qq.com/msgrd?v=3&uin={$online_qq.0.qq}&site=qq&menu=yes" target="_blank">
+	                            <span>在线客服</span><i></i>
+	                        </a>
+	                        <a class="footer-phone-customer-btn footer-phone-customer--wechat" href="javascript:void(0);">
+	                            <span>微信客服</span><i></i>
+	                        </a>
+	                        <div class="footer-phone-customer--wechat-tips">
+	                            <img src="{$TMPL}/images/bottom_wechat.png">
+	                            <i class="footer-phone-customer--wechat-tips-tri"><i></i></i>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="footer_copyright">
+	            <p class="footer_copyright-content">
+				{function name="app_conf" value="SHOP_FOOTER"} 
+	              
+	            </p>
+
+	            <p class="footer_copyright-img">
+	                <a href="javascript:void(0);" target="_blank"><img src="{$TMPL}/images/xin1.jpg" title="网信认证" alt="网信认证" width="112" height="40"></a>
+	                <a href="javascript:void(0);" target="_blank"><img src="{$TMPL}/images/xin2.jpg" title="诚信网站" alt="诚信网站" width="112" height="40"></a>
+	                <a href="#" target="_blank"><img src="{$TMPL}/images/xin3.jpg" title="可信网站" alt="可信网站" width="112" height="40"></a>
+	                <a href="javascript:void(0);" target="_blank"><img src="{$TMPL}/images/xin4.gif" title="深圳市市场监督管理局企业主体身份公示" alt="深圳市市场监督管理局企业主体身份公示" width="112" height="40"></a>
+	                <a href="#" target="_blank"><img src="{$TMPL}/images/xin5.jpg" title="GeoTrust" alt="GeoTrust" width="112" height="40"></a>
+	            </p>
+	            <p style="color:#929292;padding: 20px 0 10px;text-align: center">市场有风险，投资需谨慎；历史收益不等于实际收益</p>
+	        </div>
+	    </div>
+	</div>

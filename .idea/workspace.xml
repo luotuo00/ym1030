@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9ff4714b-7d6e-4c01-932c-a02e2680e089" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Lib/module/ajaxModule.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lib/module/ajaxModule.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tpl/blue/inc/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tpl/blue/inc/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tpl/blue/user_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tpl/blue/user_register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bbs_52jscn_com" beforeDir="false" afterPath="$PROJECT_DIR$/bbs_52jscn_com" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Cache/09cc7086d44cf42984dbc37752aaaa44.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Cache/222651384815ce561f818d1b2d7ec221.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Cache/7365e7fd428d15b550479294292da993.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Cache/914ad7a94b5f844ea0c30310e3ca26dc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Cache/a52d0f0ba97467958768ab70e78c4088.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Cache/ebb7441c823a509af78e1a96efbfdc66.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Data/_fields/Cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Data/_fields/Conf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/admin/Data/_fields/Sms.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/app/db_caches/sqlcache_config_file_61794bd465d03231ca90f8f019fe4e9a.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/runtime/app/db_caches/sqlcache_config_file_61794bd465d03231ca90f8f019fe4e9a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/borrow_step.html.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/deals.html.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/header.html.file" beforeDir="false" afterPath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/header.html.file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/stepone.html.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/user_login.html.file" beforeDir="false" afterPath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/user_login.html.file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/user_register.html.file" beforeDir="false" afterPath="$PROJECT_DIR$/public/runtime/app/tpl_compiled/user_register.html.file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/cache_deal_cate_auto_cache/c4/ca/~@72a02847e6958979e62388ff2d4e15f4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/credit_type_auto_cache/cc/c4/~@3f1903e77ede89c7b16d43d129d93e2b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/deal_city_auto_cache/c2/c4/~@0b74c1d15347370f5c4a67e19b05cbdf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/deal_city_auto_cache/c3/ca/~@750ed4ab0429dbd43ef818e6e8a7d500.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/deal_loan_type_list_auto_cache/c3/ce/~@31b6514353e17fa12ac39f40a47aac8f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/deal_shop_acate_belone_ids_auto_cache/c2/c4/~@0b74c1d15347370f5c4a67e19b05cbdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/runtime/data/deal_shop_acate_belone_ids_auto_cache/c2/c4/~@0b74c1d15347370f5c4a67e19b05cbdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/deal_shop_acate_belone_ids_auto_cache/c8/c7/~@592f26479d5fe0bf092c7e2b763890e0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/level_auto_cache/c1/ca/~@8eac704614da2a5993c30717c74d9e7b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/loantype_list_auto_cache/c3/c8/~@eccbc87e4b5ce2fe28308fd9f2a7baf3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c1/ce/~@805beffea0e2829110602de6625256e0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c2/cf/~@e88ea450f74a8e78bfe83577ef47b3f7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c6/c0/~@a03fcec3dccf41bca1d2efaf90f5440e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c6/c4/~@377ce1177a91352f5f0cec250d045aa1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c6/c4/~@f07db7cab325af4af13d1df906114a0d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c6/c5/~@bfaa795754dc50a197dc98f66a999f22.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c8/c3/~@99c6fa23dcbbaba300b36a4365f6116f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c8/c7/~@9a851d5287351665c98d7cd19d3f7f0a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/c8/c8/~@3e96c9713d8ad9c980e2c2c9c246f2a1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/ca/cf/~@2854d23812d263bd85ad9e77ca0c1b9e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cb/c3/~@c5244533a1855bc5b5f8c9822c60a55d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cb/c7/~@749dbf699b2e27d43c44370c6ed10b5b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cc/cd/~@58b014fb3c2c9cecf87b097b49848abb.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cd/c1/~@ff346438614c5bb25d573646a201755e.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cd/c1/~@ff346438614c5bb25d573646a201755e.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cd/c8/~@89d1dd72cbcfcc1f5a5d639df1c8f631.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cd/c8/~@89d1dd72cbcfcc1f5a5d639df1c8f631.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cd/cb/~@4ecb167f354759b19aa325fa4ce711a6.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/page_static_cache/cf/c7/~@8ab382532f44e68093579160ac74150a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/data/user_carry_config_auto_cache/c6/c6/~@31380c1a5cc35a4fe7ad1187c87b8e03.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/statics/071fc0e840fe2655d476285b695a948b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime/statics/f829ea6706d635e70b1a39819a55caeb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/session/sess_kk7cepcggkrbddub3r0db19cg2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/sms/MS/transport.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/sms/MS_sms.php" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="276429262">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.62" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="bbs_52jscn_com" value="1" />
+          <entry key="css" value="4" />
+          <entry key="html" value="6" />
+          <entry key="php" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="4" />
+          <entry key="HTML" value="6" />
+          <entry key="PHP" value="24" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="bbs_52jscn_com" value="13" />
+          <entry key="html" value="33" />
+          <entry key="php" value="1295" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="33" />
+          <entry key="PHP" value="1295" />
+          <entry key="PLAIN_TEXT" value="13" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/lailai/define.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bbs_52jscn_com">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Tpl/blue/user_register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9390">
+              <caret line="313" column="30" selection-start-line="313" selection-start-column="30" selection-end-line="313" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Lib/module/ajaxModule.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10770">
+              <caret line="365" column="21" selection-start-line="365" selection-start-column="21" selection-end-line="365" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/common.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173220">
+              <caret line="5780" selection-start-line="5780" selection-end-line="5780" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/utils/es_sms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="810">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/sms/FW_sms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1680">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
+              <folding>
+                <element signature="e#533#918#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/libs/sms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Tpl/blue/inc/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2400">
+              <caret line="80" column="146" selection-start-line="80" selection-start-column="146" selection-end-line="80" selection-end-column="146" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>f_blue{color:#fff !important</find>
+      <find>config</find>
+      <find>市场有风险，投资需谨慎</find>
+      <find>验证码</find>
+      <find>left_time_to_send_regvy</find>
+      <find>get_emregsms_code</find>
+      <find>send_sms_email</find>
+      <find>getSmsInfo</find>
+      <find>$code</find>
+      <find>get_regsms_code</find>
+      <find>$re['msg']</find>
+      <find>get_register_verify_code</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/Tpl/blue/css/style.css" />
+        <option value="$PROJECT_DIR$/app/Tpl/new/css/style.css" />
+        <option value="$PROJECT_DIR$/system/sms/MS_sms.php" />
+        <option value="$PROJECT_DIR$/app/Tpl/blue/user_login.html" />
+        <option value="$PROJECT_DIR$/app/Tpl/blue/inc/header.html" />
+        <option value="$PROJECT_DIR$/app/Tpl/blue/user_register.html" />
+        <option value="$PROJECT_DIR$/system/lailai/define.php" />
+        <option value="$PROJECT_DIR$/system/sms/FW_sms.php" />
+        <option value="$PROJECT_DIR$/app/Lib/module/ajaxModule.class.php" />
+        <option value="$PROJECT_DIR$/system/common.php" />
+        <option value="$PROJECT_DIR$/../test_sms/test.php" />
+        <option value="$PROJECT_DIR$/bbs_52jscn_com" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/wap/tpl/fanwe/js/lr/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="100" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ym1030" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ym1030" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ym1030" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ym1030" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ff4714b-7d6e-4c01-932c-a02e2680e089" name="Default Changelist" comment="" />
+      <created>1540964219550</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540964219550</updated>
+      <workItem from="1540964221060" duration="10028000" />
+      <workItem from="1541035223771" duration="1649000" />
+      <workItem from="1541058467239" duration="3204000" />
+      <workItem from="1541121660983" duration="20141000" />
+      <workItem from="1541382792514" duration="610000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="35632000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1992288" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1966581" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/system/payment/Alipay_payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="431" column="2" lean-forward="true" selection-start-line="431" selection-start-column="2" selection-end-line="431" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/sms/CSHX_sms.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tpl/blue/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="248" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tpl/new/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="1" column="226" lean-forward="true" selection-start-line="1" selection-start-column="226" selection-end-line="1" selection-end-column="226" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/sms/MS_sms.php" />
+    <entry file="file://$PROJECT_DIR$/admin/Lib/Action/SmsAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="871">
+          <caret line="100" column="33" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/Tpl/default/Sms/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/Tpl/default/Sms/install.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="47" column="38" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/Tpl/default/Sms/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/sms/MS/transport.php" />
+    <entry file="file://$PROJECT_DIR$/app/Tpl/blue/user_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Lib/module/indexModule.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/Lib/Action/LicaiHolidayAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/pcre/pcre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="367" column="9" selection-start-line="367" selection-start-column="9" selection-end-line="367" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_d.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="298" column="9" selection-start-line="298" selection-start-column="9" selection-end-line="298" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/db_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" selection-start-line="2" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../test_sms/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="23" lean-forward="true" selection-end-line="30" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/lailai/define.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tpl/blue/user_register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9390">
+          <caret line="313" column="30" selection-start-line="313" selection-start-column="30" selection-end-line="313" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Lib/module/ajaxModule.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10770">
+          <caret line="365" column="21" selection-start-line="365" selection-start-column="21" selection-end-line="365" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173220">
+          <caret line="5780" selection-start-line="5780" selection-end-line="5780" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/utils/es_sms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/sms/FW_sms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="e#533#918#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/libs/sms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tpl/blue/inc/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="80" column="146" selection-start-line="80" selection-start-column="146" selection-end-line="80" selection-end-column="146" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bbs_52jscn_com">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,164 @@
+<?php echo $this->fetch('inc/header.html'); ?>
+	 <!--理財-->
+    <div class="ftypebar">
+        <div class="wrap">
+            <a href="/index.php?ctl=deals#deallist" class="ftypebar-item active"><span>定期投资</span>(<i>3</i>)</a>
+            <a href="<?php
+echo parse_url_tag("u:index|transfer|"."".""); 
+?>" class="ftypebar-item "><span>转让项目</span></a>
+        </div>
+    </div>
+    <!-- 筛选 start -->
+    <div class="filterbox" style="    padding-top: 50px;">
+    	<div class="wrap propAttrs">
+    		<form action="/index.php?ctl=deals" method="post" id="searchByConditionForm">
+	            <div class="attr">
+	                <div class="attrKey">借款期限：</div>
+	                <div class="attrValues">
+	                    <ul class="av-collapse" name="interest" id="months">
+	                        <?php $_from = $this->_var['months_type_url']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'months_0_71247600_1540965446');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['months_0_71247600_1540965446']):
+?>
+							<li><a href="<?php echo $this->_var['months_0_71247600_1540965446']['url']; ?>#deallist" <?php if ($this->_var['key'] == $this->_var['months_type']): ?>class="cur"<?php endif; ?>><?php echo $this->_var['months_0_71247600_1540965446']['name']; ?></a></li>
+							<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="attr">
+	                <div class="attrKey">借款状态：</div>
+	                <div class="attrValues">
+	                    <ul class="av-collapse" id="dashboard">
+	                        <?php $_from = $this->_var['deal_status_url']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'status');if (count($_from)):
+    foreach ($_from AS $this->_var['status']):
+?>
+							<li >
+								<a href="<?php echo $this->_var['status']['url']; ?>#deallist" <?php if ($this->_var['status']['key'] == $this->_var['deal_status']): ?>class="cur"<?php endif; ?>><?php echo $this->_var['status']['name']; ?></a>
+							</li>
+							<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="attr">
+	                <div class="attrKey">回馈利率：</div>
+	                <div class="attrValues">
+	                    <ul class="av-collapse" name="interest" id="interest">
+	                       <?php $_from = $this->_var['interest_url']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'iinterest');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['iinterest']):
+?>
+						   <li><a href="<?php echo $this->_var['iinterest']['url']; ?>#deallist" <?php if ($this->_var['interest'] == $this->_var['iinterest']['interest']): ?>class="cur"<?php endif; ?>><?php echo $this->_var['iinterest']['name']; ?><?php if ($this->_var['key'] != 0): ?>以上<?php endif; ?></a></li>
+						   <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+	                    </ul>
+	                </div>
+	            </div>
+	        </form>
+    	</div>
+    </div>
+    <!-- 筛选 end -->
+    <!-- 列表 start -->
+    <div class="financials">
+    	<div class="wrap clearfix">
+    		<!-- financials-item start -->
+			<?php if ($this->_var['deal_list']): ?>
+				<?php $_from = $this->_var['deal_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'deal');$this->_foreach['deal'] = array('total' => count($_from), 'iteration' => 0);
+if ($this->_foreach['deal']['total'] > 0):
+    foreach ($_from AS $this->_var['key'] => $this->_var['deal']):
+        $this->_foreach['deal']['iteration']++;
+?>
+					<?php if ($this->_var['deal']['is_new']): ?>
+    				<div class="financials-item small" >
+    					<img class="financials-item-tag" src="//static.lcfarm.com/pc-dist/common/module/financialsBar/financials_newer_d3a5d56.png">
+    					<div class="financials-item-tag js-hovertips0">
+							<span class="hovertips">
+								<span class="hovertips-content">
+									<span class="hovertips-text">新手专享项目，注册用户累计有3次购买机会</span>
+									<span class="hovertips-arrow">
+										<span class="hovertips-arrow-inner"></span>
+									</span>
+								</span>
+							</span>
+    					</div>
+    					<h3><span class="newer">新手专享</span></h3>
+    					<div class="financials-item-timelimit"><i class="orange"><?php echo $this->_var['deal']['repay_time']; ?></i><?php if ($this->_var['deal']['repay_time_type'] == 0): ?>天<?php else: ?>个月<?php endif; ?></div>
+			    		<div class="financials-item-interestrate"><b><?php 
+$k = array (
+  'name' => 'sprintf',
+  's' => '%.1f',
+  'v' => $this->_var['deal']['rate'],
+);
+echo $k['name']($k['s'],$k['v']);
+?></b>%
+			        	<div class="financials-item-raise">
+							<!-- 可购买 -->
+							<p><span class="financials-item-num" style="color:  "></span></p>
+						   <?php if ($this->_var['deal']['user_bid_rebate'] > 0): ?> <p style="color: #ff7930"><span class="financials-item-num">+<?php echo $this->_var['deal']['user_bid_rebate']; ?></span>%</p><?php endif; ?>
+			        	</div>
+			    		</div>
+			    		<div class="financials-item-interestrate-a">历史年化收益率</div>
+			    		<div class="financials-item-intro-title">农优宝A-1184</div>
+						<div class="js-financials-list-extra">
+			        		<div class="financials-item-intro">可购金额：<i>14.05万</i></div>
+			        		<div class="financials-item-progress"><i style="width:56%;"></i></div>
+			        		<div class="financials-item-operate"><a href="<?php echo $this->_var['deal']['url']; ?>" class="qgz wbtn wbtn-big-green">立即购买</a></div>
+			    		</div>
+					</div>
+					<?php else: ?>
+					<!-- financials-item start -->
+					<div class="financials-item small" data-id="12995">
+						<h3><i><?php echo $this->_var['deal']['repay_time']; ?></i><?php if ($this->_var['deal']['repay_time_type'] == 0): ?>天<?php else: ?>个月<?php endif; ?></h3>
+						<div class="financials-item-timelimit"></div>
+						<div class="financials-item-interestrate"><b><?php 
+$k = array (
+  'name' => 'sprintf',
+  's' => '%.1f',
+  'v' => $this->_var['deal']['rate'],
+);
+echo $k['name']($k['s'],$k['v']);
+?></b>%
+							<div class="financials-item-raise"></div>
+						</div>
+						<div class="financials-item-interestrate-a">历史年化收益率</div>
+						<div class="financials-item-intro-title"><?php echo $this->_var['deal']['sub_name']; ?></div>
+						<div class="js-financials-list-extra">
+							<div class="financials-item-intro">项目规模：<i><?php echo $this->_var['deal']['borrow_amount_format']; ?></i></div>
+							<div class="financials-item-progress"><i style="width:<?php 
+$k = array (
+  'name' => 'round',
+  'v' => $this->_var['deal']['progress_point'],
+  'f' => '3',
+);
+echo $k['name']($k['v'],$k['f']);
+?>%;"></i></div>
+							<div class="financials-item-operate">
+							<?php if ($this->_var['deal']['is_delete'] == 2): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="yfb wbtn wbtn-big-transparent ">待发布</a>
+							<?php elseif ($this->_var['deal']['is_wait'] == 1): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="yfb wbtn wbtn-big-transparent ">未开始</a>
+							<?php elseif ($this->_var['deal']['deal_status'] == 5): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="yfb wbtn wbtn-big-transparent ">还款完毕</a>
+							<?php elseif ($this->_var['deal']['deal_status'] == 4): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="yfb wbtn wbtn-big-transparent ">还款中</a>
+							<?php elseif ($this->_var['deal']['deal_status'] == 0): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="yfb wbtn wbtn-big-transparent ">等待审核</a>
+							<?php elseif ($this->_var['deal']['deal_status'] == 1 && $this->_var['deal']['remain_time'] > 0): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="qgz wbtn wbtn-big-green ">立即购买</a>
+							<?php elseif ($this->_var['deal']['deal_status'] == 2): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="yfb wbtn wbtn-big-transparent ">已满标</a>
+							<?php elseif ($this->_var['deal']['deal_status'] == 3): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="yfb wbtn wbtn-big-transparent ">已流标</a>
+							<?php elseif ($this->_var['deal']['deal_status'] == 1 && $this->_var['deal']['remain_time'] <= 0): ?>
+								<a href="<?php echo $this->_var['deal']['url']; ?>" class="yfb wbtn wbtn-big-transparent ">已过期</a>
+							<?php endif; ?>
+							</div>
+						</div>
+					</div>
+					<?php endif; ?>
+					<!-- financials-item end -->
+    			<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+			<?php endif; ?>
+    	</div>
+    	<div class="sort-page js-pageCtrl">
+	   		<div class="pages"><?php echo $this->_var['pages']; ?></div>
+		</div>
+    </div>
+    <!-- 列表 end -->
+<?php echo $this->fetch('inc/footer.html'); ?>

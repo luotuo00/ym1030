@@ -1,0 +1,276 @@
+{include file="inc/header.html"} 
+
+<div class="container touzi-list">
+			<h2 class="list-title">推荐投资理财产品</h2>
+            <div class="list-box">
+                <div class="list-box-wrapper">
+                    <div class="list-box-inner list-inner">
+                        <ul>
+
+						{foreach from=$deal_list item="deal" key=key name="deal"}
+                                    <li class="touzi-item che">
+                                        <div class="item-title">
+                                            {$deal.cate_info.name}  
+                                        </div>
+                                        <div class="time-profit">
+                                            <div class="time" style="text-align:right;">
+                                                <div>项目周期</div>
+
+                                                <span class="text-primary">{$deal.repay_time}</span>{if $deal.repay_time_type eq 0}天{else}个月{/if}
+
+                                            </div>
+                                            <div class="profit">
+                                                <div>年化收益</div>
+                                                <div><span class="text-primary">{function name="sprintf" s="%.1f" v=$deal.rate }</span>%</div>
+                                            </div>
+                                        </div>
+
+                                        <span class="item-logo"></span>
+                                        <span class="round-star star-5">
+
+                                        </span>
+
+                                        <a style="color:black;font-weight:bolder" href="/Project/Detail?id=60&amp;SP=1">
+                                            <h3>  {$deal.sub_name}</h3>
+                                        </a>
+                                        <div class="item-info">
+                                            <ul>
+                                                <li style="font-size:12px;">{function name="loantypename" v="$deal.loantype" type=0}</li>
+                                                <li style="font-size:12px;">{$deal.cate_info.name}</li>
+                                                <li></li>
+                                            </ul>
+
+                                        </div>
+                                        <p style="font-size:15px;text-align:center">
+
+
+
+                                            {$deal.need_money}/{$deal.borrow_amount_format}
+                                        </p>
+                                        <div class="time-left">
+                                                <p class="" style="color: #f26600"> {if $deal.deal_status eq 1}投资中{elseif $deal.deal_status eq 2}满标{elseif $deal.deal_status eq 3}流标{elseif $deal.deal_status eq 4}还款中{/if}</p>
+                                        </div>
+
+                                        <div class="process-bar over">
+
+                                            <div class="process-bar-content" style="width: {function name='round' v=$deal.progress_point f=3}%;background-color: #f26600;    margin: 0;'">
+                                                <p class="text-primary" style="top: -12px; position: absolute; font-weight: bolder;"></p>
+                                                <div class="progress-bar">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="process-content">
+
+                                            <span class="float-left">
+                                                投资人数
+                                                <span class="text-primary">
+                                                    <b>{$deal.buy_count}</b>
+                                                </span>
+                                            </span>
+                                        </div>
+                                         <!-- 添加is-backing 样式后 按钮变成 灰色 -->
+
+										 {if $deal.is_delete eq 2}
+						
+
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  is-backing">待发布</a>
+
+					{elseif $deal.is_wait eq 1}
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  is-backing">未开始</a>
+
+						
+					{elseif $deal.deal_status eq 5}
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  is-backing">还款完毕</a>
+						
+					{elseif $deal.deal_status eq 4}
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  is-backing">还款中</a>
+
+						
+					{elseif $deal.deal_status eq 0}
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  is-backing">等待审核</a>
+						
+					{elseif $deal.deal_status eq 1 && $deal.remain_time gt 0}
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  ">马上投标</a>
+						
+					{elseif $deal.deal_status eq 2}
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  is-backing">已满标</a>
+					
+					{elseif $deal.deal_status eq 3}
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  is-backing">已流标</a>
+						
+					{elseif $deal.deal_status eq 1 && $deal.remain_time lte 0}
+						<a href="{$deal.url}" class="btn btn-primary btn-lg  is-backing">已过期</a>
+						
+					{/if}
+
+
+											
+
+
+                                    </li>
+                                    <!-- 在li上添加的class控制投标内容样式
+                                       样式共分为：
+                                              che：融车宝
+                                              fang：融房宝
+                                              danbao 融担保
+                                    -->
+                                   {/foreach}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-controls">
+                <span class="main-prev"></span>
+                <span class="main-next"></span>
+            </div>
+			<a class="more-pro" href="/index.php?ctl=deals"> 更多产品<i class="fa fa-caret-right"></i></a>
+        </div>
+
+
+<script type="text/javascript">
+$(function() {
+	var $sidebar = $(".index_right"),
+		$window = $(window),
+		leftset=$(".index_left").innerHeight(),
+		offset = $sidebar.offset(),
+		topPadding = 15;
+		$window.scroll(function() {
+			var	top= $window.scrollTop() - offset.top + topPadding;
+			if ($window.scrollTop() > offset.top && leftset>$window.scrollTop()) {
+				if(top + $sidebar.outerHeight() <= $(".index_left").outerHeight())
+					$sidebar.stop().css("marginTop", top);
+			} else if (top<61) {
+				$sidebar.stop().css("marginTop", 0);
+			}
+		});
+
+	$('.list-inner').css('width', $('.list-inner .touzi-item').length * 293 + 20);
+	$('.main-prev').on('click', function (e) {
+		if (parseInt($('.list-inner').css('left')) > 0 || parseInt($('.list-inner').css('left')) == 0)
+			return;
+		else
+			$('.list-inner').animate({ 'left': '+=1172px' });
+	})
+	$('.main-next').on('click', function (e) {
+		if (parseInt($('.list-inner').css('left')) - 1080 < parseInt($('.list-inner').css('width')) * -1)
+			return;
+		else
+			$('.list-inner').animate({ 'left': '-=1172px' });
+    });
+});
+</script>
+<!--新闻 start-->
+<div class="js-nfdnews">
+    <div class="nfdnews">
+        <div class="w1200">
+            <div class="nfdnews_a1">
+                <div class="nfdnews_b12">媒体报道</div>
+                <a class="mt_more" target="_blank" href="{url x="index" r="acate" p="id=$mtbd_id"}">更多&gt;</a>
+                <div class="nfdnews_b12" style="margin-left: 40px;">公司动态</div>
+                <a class="mt_more" target="_blank" href="/index.php?ctl=acate&id=5">更多&gt;</a></div>
+            <div class="nfdnews_a2 nfdnews_left">
+                <div class="nfdnews_a2_wrap">
+                    <div id="newsSlider" class="nfdnews_topnews example" style="width:266px;">
+                        <ul style="width: 1064px;">
+
+							{foreach from=$mtbd_pics item="pic"}
+                            <li>
+                                <a class="alt" href="/index.php?ctl=article&id={$pic.id}" target="_blank" title="{$pic.title}" >
+                                    <div class="nfdnews_topnews_left">
+                                        <img src="{$pic.icon}" width="100%" height="100%" /></div>
+                                </a>
+                            </li>
+							{/foreach}
+                            
+                        </ul>
+                        <ol class="nfdnews_a3_circle">
+						{foreach from=$mtbd_pics item="pic" key=key}
+                            <li {if $key eq 0}class="circle"{/if}></li>
+                            {/foreach}
+                        </ol>
+                    </div>
+					{foreach from=$mtbd_pics item="pic" key=key}
+                    <div class="J_NewsSliderText nfdnews_topnews_right {if $key eq 0}active{/if}">
+                        <a href="/index.php?ctl=article&id={$pic.id}" target="_blank" title="{$pic.title}" class="nfdnews_topnews_1">
+                            <b>{$pic.sub_title} |</b>{$pic.title}</a>
+                        <div class="nfdnews_topnews_2 ">{$pic.brief}</div>
+					</div>
+					{/foreach}
+                    <div class="nfdnews_b22">
+                        <ul>
+							{foreach from=$mtbd_list item="mtbd"}
+                            <li>
+                                <a href="{$mtbd.url}" target="_blank" title="{$mtbd.title}">
+                                    <b>{$mtbd.sub_title} |</b>{$mtbd.title}</a>
+                            </li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nfdnews_a3 nfdnews_right">
+                <div class="nfdnews_topnews">
+                    <ul>
+                        <li>
+                            <div class="alt">
+                                <a style="float:left" href="/index.php?ctl=article&id={$news_pics.id}" target="_blank" title="{$news_pics.title}">
+                                    <div class="nfdnews_topnews_left">
+                                        <img src="{$news_pics.icon}" width="100%" height="100%" /></div>
+                                </a>
+                                <div class="nfdnews_topnews_right">
+                                    <a href="/index.php?ctl=article&id={$news_pics.id}" target="_blank" title="{$news_pics.title}" class="nfdnews_topnews_1">{$news_pics.title}</a>
+                                    <div class="nfdnews_topnews_2 ">
+                                        <p>{$news_pics.brief}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nfdnews_a3_bottom">
+                    <div class="nfdnews_a3_bottom_left">
+                        <ul class="nfdnews_a3_1">
+{foreach from=$compnay_active_list item="news" key=key}
+						
+                            <li>
+                                <a target="_blank" href="{$news.url}" title="{$news.title}">{$news.title}</a>
+                                <span>{function name="to_date" v="$news.create_time" s="Y-m-d"}</span></li>
+                           {/foreach}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+	var $newsSlider = $("#newsSlider"),
+		$newsImgs = $newsSlider.children('ul'),
+		$newsIndex = $newsSlider.children('ol'),
+		$newsText = $(".J_NewsSliderText"),
+		newsLen = $newsImgs.children('li').length,
+		newsIndex = 0;
+	$newsImgs.width(266*newsLen+20);
+	function goto(index){
+		$newsImgs.animate({"left":-266*index+"px"},300);
+		$newsText.eq(index).addClass('active').siblings('.J_NewsSliderText').removeClass('active');
+		$newsIndex.find('li').eq(index).addClass('circle').siblings('li').removeClass('circle');
+	}
+	var newsTimer = null;
+	$newsSlider.hover(function(){
+		clearInterval(newsTimer);
+	},function(){
+		newsTimer = setInterval(function(){
+			newsIndex++;
+			newsIndex = newsIndex >= newsLen ? 0 : newsIndex;
+			goto(newsIndex);
+		},5000);
+	});
+	$newsIndex.find('li').click(function(){
+		newsIndex = $(this).index();
+		goto(newsIndex);
+	});
+});
+</script>
+{include file="inc/footer.html"}

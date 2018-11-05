@@ -1,0 +1,131 @@
+{include file="inc/header.html"}
+	 <!--理財-->
+    <div class="ftypebar">
+        <div class="wrap">
+            <a href="/index.php?ctl=deals#deallist" class="ftypebar-item active"><span>定期投资</span>(<i>3</i>)</a>
+            <a href="{url x="index" r="transfer"}" class="ftypebar-item "><span>转让项目</span></a>
+        </div>
+    </div>
+    <!-- 筛选 start -->
+    <div class="filterbox" style="    padding-top: 50px;">
+    	<div class="wrap propAttrs">
+    		<form action="/index.php?ctl=deals" method="post" id="searchByConditionForm">
+	            <div class="attr">
+	                <div class="attrKey">借款期限：</div>
+	                <div class="attrValues">
+	                    <ul class="av-collapse" name="interest" id="months">
+	                        {foreach from="$months_type_url" item="months" key=key}
+							<li><a href="{$months.url}#deallist" {if $key eq $months_type}class="cur"{/if}>{$months.name}</a></li>
+							{/foreach}
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="attr">
+	                <div class="attrKey">借款状态：</div>
+	                <div class="attrValues">
+	                    <ul class="av-collapse" id="dashboard">
+	                        {foreach from =$deal_status_url item="status"}
+							<li >
+								<a href="{$status.url}#deallist" {if $status.key eq $deal_status}class="cur"{/if}>{$status.name}</a>
+							</li>
+							{/foreach}
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="attr">
+	                <div class="attrKey">回馈利率：</div>
+	                <div class="attrValues">
+	                    <ul class="av-collapse" name="interest" id="interest">
+	                       {foreach from =$interest_url item="iinterest" key=key}
+						   <li><a href="{$iinterest.url}#deallist" {if $interest eq $iinterest.interest}class="cur"{/if}>{$iinterest.name}{if $key neq 0}以上{/if}</a></li>
+						   {/foreach}
+	                    </ul>
+	                </div>
+	            </div>
+	        </form>
+    	</div>
+    </div>
+    <!-- 筛选 end -->
+    <!-- 列表 start -->
+    <div class="financials">
+    	<div class="wrap clearfix">
+    		<!-- financials-item start -->
+			{if $deal_list}
+				{foreach from=$deal_list item="deal" key=key name="deal"}
+					{if $deal.is_new }
+    				<div class="financials-item small" >
+    					<img class="financials-item-tag" src="//static.lcfarm.com/pc-dist/common/module/financialsBar/financials_newer_d3a5d56.png">
+    					<div class="financials-item-tag js-hovertips0">
+							<span class="hovertips">
+								<span class="hovertips-content">
+									<span class="hovertips-text">新手专享项目，注册用户累计有3次购买机会</span>
+									<span class="hovertips-arrow">
+										<span class="hovertips-arrow-inner"></span>
+									</span>
+								</span>
+							</span>
+    					</div>
+    					<h3><span class="newer">新手专享</span></h3>
+    					<div class="financials-item-timelimit"><i class="orange">{$deal.repay_time}</i>{if $deal.repay_time_type eq 0}天{else}个月{/if}</div>
+			    		<div class="financials-item-interestrate"><b>{function name="sprintf" s="%.1f" v=$deal.rate }</b>%
+			        	<div class="financials-item-raise">
+							<!-- 可购买 -->
+							<p><span class="financials-item-num" style="color:  "></span></p>
+						   {if $deal.user_bid_rebate gt 0} <p style="color: #ff7930"><span class="financials-item-num">+{$deal.user_bid_rebate}</span>%</p>{/if}
+			        	</div>
+			    		</div>
+			    		<div class="financials-item-interestrate-a">历史年化收益率</div>
+			    		<div class="financials-item-intro-title">农优宝A-1184</div>
+						<div class="js-financials-list-extra">
+			        		<div class="financials-item-intro">可购金额：<i>14.05万</i></div>
+			        		<div class="financials-item-progress"><i style="width:56%;"></i></div>
+			        		<div class="financials-item-operate"><a href="{$deal.url}" class="qgz wbtn wbtn-big-green">立即购买</a></div>
+			    		</div>
+					</div>
+					{else}
+					<!-- financials-item start -->
+					<div class="financials-item small" data-id="12995">
+						<h3><i>{$deal.repay_time}</i>{if $deal.repay_time_type eq 0}天{else}个月{/if}</h3>
+						<div class="financials-item-timelimit"></div>
+						<div class="financials-item-interestrate"><b>{function name="sprintf" s="%.1f" v=$deal.rate }</b>%
+							<div class="financials-item-raise"></div>
+						</div>
+						<div class="financials-item-interestrate-a">历史年化收益率</div>
+						<div class="financials-item-intro-title">{$deal.sub_name}</div>
+						<div class="js-financials-list-extra">
+							<div class="financials-item-intro">项目规模：<i>{$deal.borrow_amount_format}</i></div>
+							<div class="financials-item-progress"><i style="width:{function name="round" v=$deal.progress_point f=3}%;"></i></div>
+							<div class="financials-item-operate">
+							{if $deal.is_delete eq 2}
+								<a href="{$deal.url}" class="yfb wbtn wbtn-big-transparent ">待发布</a>
+							{elseif $deal.is_wait eq 1}
+								<a href="{$deal.url}" class="yfb wbtn wbtn-big-transparent ">未开始</a>
+							{elseif $deal.deal_status eq 5}
+								<a href="{$deal.url}" class="yfb wbtn wbtn-big-transparent ">还款完毕</a>
+							{elseif $deal.deal_status eq 4}
+								<a href="{$deal.url}" class="yfb wbtn wbtn-big-transparent ">还款中</a>
+							{elseif $deal.deal_status eq 0}
+								<a href="{$deal.url}" class="yfb wbtn wbtn-big-transparent ">等待审核</a>
+							{elseif $deal.deal_status eq 1 && $deal.remain_time gt 0}
+								<a href="{$deal.url}" class="qgz wbtn wbtn-big-green ">立即购买</a>
+							{elseif $deal.deal_status eq 2}
+								<a href="{$deal.url}" class="yfb wbtn wbtn-big-transparent ">已满标</a>
+							{elseif $deal.deal_status eq 3}
+								<a href="{$deal.url}" class="yfb wbtn wbtn-big-transparent ">已流标</a>
+							{elseif $deal.deal_status eq 1 && $deal.remain_time lte 0}
+								<a href="{$deal.url}" class="yfb wbtn wbtn-big-transparent ">已过期</a>
+							{/if}
+							</div>
+						</div>
+					</div>
+					{/if}
+					<!-- financials-item end -->
+    			{/foreach}
+			{/if}
+    	</div>
+    	<div class="sort-page js-pageCtrl">
+	   		<div class="pages">{$pages}</div>
+		</div>
+    </div>
+    <!-- 列表 end -->
+{include file="inc/footer.html"}
